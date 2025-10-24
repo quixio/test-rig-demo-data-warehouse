@@ -52,12 +52,6 @@ deployments:
   - name: Quix TS Query UI
     image: quixcontainerregistry.azurecr.io/quix-datalake-ts-ui:20250926.11-submit-overlay
     deploymentType: Service
-    plugin:
-      embeddedView: true
-      sidebarItem:
-        show: true
-        label: "Data Explorer"
-        icon: "search"
     resources:
       cpu: 200
       memory: 500
@@ -75,6 +69,12 @@ deployments:
         inputType: FreeText
         description: debug logging level
         value: DEBUG
+    plugin:
+      embeddedView: true
+      sidebarItem:
+        show: true
+        label: Data Explorer
+        icon: search
   - name: Quix TS Datalake Catalog
     image: quixcontainerregistry.azurecr.io/quix-datalake-ts-catalog:20250925.13-query2
     deploymentType: Service
@@ -172,3 +172,4 @@ deployments:
         description: The default database name to initialize PostgreSQL with
         required: true
         value: quix
+
