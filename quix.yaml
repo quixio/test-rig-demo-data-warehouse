@@ -16,8 +16,6 @@ deployments:
     publicAccess:
       enabled: true
       urlPrefix: quixlake
-    blobStorage:
-      bind: true
     state:
       enabled: true
       size: 1
@@ -35,6 +33,8 @@ deployments:
         inputType: Secret
         description: AWS Secret Access Key (leave empty to use IAM roles)
         secretKey: ANTHROPIC_API_KEY
+    blobStorage:
+      bind: true
   - name: Quix TS Query UI
     image: quixcontainerregistry.azurecr.io/quix-datalake-ts-ui:20250926.11-submit-overlay
     deploymentType: Service
@@ -56,16 +56,23 @@ deployments:
         description: debug logging level
         value: DEBUG
     plugin:
-      embeddedView: true
+      embeddedView:
+        enabled: true
+        hideHeader: true
+        default: true
       sidebarItem:
         show: true
         label: Data Explorer
         icon: search
+        order: 0
+      globalItem:
+        show: true
+        label: Data Explorer
+        icon: data_usage
+        order: 0
   - name: Quix TS Datalake Catalog
     image: quixcontainerregistry.azurecr.io/quix-datalake-ts-catalog:20260225.2-update-api
     deploymentType: Service
-    blobStorage:
-      bind: true
     resources:
       cpu: 200
       memory: 500
@@ -111,6 +118,8 @@ deployments:
         inputType: FreeText
         required: true
         value: postgres
+    blobStorage:
+      bind: true
   - name: postgreSQL
     application: postgresql
     version: latest
