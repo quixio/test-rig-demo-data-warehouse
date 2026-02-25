@@ -16,6 +16,8 @@ deployments:
     publicAccess:
       enabled: true
       urlPrefix: quixlake
+    blobStorage:
+      bind: true
     state:
       enabled: true
       size: 1
@@ -62,6 +64,8 @@ deployments:
   - name: Quix TS Datalake Catalog
     image: quixcontainerregistry.azurecr.io/quix-datalake-ts-catalog:20260225.2-update-api
     deploymentType: Service
+    blobStorage:
+      bind: true
     resources:
       cpu: 200
       memory: 500
