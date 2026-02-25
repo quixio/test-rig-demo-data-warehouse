@@ -36,7 +36,7 @@ deployments:
     blobStorage:
       bind: true
   - name: Quix TS Query UI
-    image: quixcontainerregistry.azurecr.io/quix-datalake-ts-ui:20250926.11-submit-overlay
+    image: quixcontainerregistry.azurecr.io/quix-datalake-ts-ui:20260225.2-update-api
     deploymentType: Service
     resources:
       cpu: 200
