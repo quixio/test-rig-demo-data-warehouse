@@ -7,7 +7,7 @@ metadata:
 # This section describes the Deployments of the data pipeline
 deployments:
   - name: Quix TS Datalake API
-    image: quixcontainerregistry.azurecr.io/quix-datalake-ts-api:20260318.6-continues-compactions
+    image: quixcontainerregistry.azurecr.io/quix-datalake-ts-api:20260320.1-continues-compactions 
     deploymentType: Service
     resources:
       cpu: 1000
@@ -36,7 +36,7 @@ deployments:
     blobStorage:
       bind: true
   - name: Quix TS Query UI
-    image: quixcontainerregistry.azurecr.io/quix-datalake-ts-ui:20260318.6-continues-compactions
+    image: quixcontainerregistry.azurecr.io/quix-datalake-ts-ui:20260320.1-continues-compactions 
     deploymentType: Service
     resources:
       cpu: 200
@@ -71,7 +71,7 @@ deployments:
         icon: data_usage
         order: 0
   - name: Quix TS Datalake Catalog
-    image: quixcontainerregistry.azurecr.io/quix-datalake-ts-catalog:20260318.6-continues-compactions
+    image: quixcontainerregistry.azurecr.io/quix-datalake-ts-catalog:20260320.1-continues-compactions 
     deploymentType: Service
     resources:
       cpu: 200
